@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.faisal.productionController">
+
+    <Label layoutX="20" layoutY="20" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Hatchery Manager - Production Cycle Planning" />
+
+    <!-- Logout -->
+    <Button layoutX="780" layoutY="20" onAction="#backOA" prefWidth="80" text="Back" />
+
+    <!-- Broodstock Section -->
+    <Label layoutX="20" layoutY="80" text="Available Broodstock:" />
+    <TableView fx:id="broodStockTV" layoutX="20" layoutY="110" prefHeight="200" prefWidth="400">
+        <columns>
+            <TableColumn fx:id="idTC" prefWidth="80" text="ID" />
+            <TableColumn fx:id="speciesTC" prefWidth="150" text="Species" />
+            <TableColumn fx:id="healthStatusTC" prefWidth="150" text="Health Status" />
+        </columns>
+    </TableView>
+
+    <!-- Spawning Targets -->
+    <Label layoutX="450" layoutY="80" text="Spawning Target (per Pond/Tank):" />
+
+    <ComboBox fx:id="pondCB" layoutX="450" layoutY="110" prefWidth="200" />
+    <TextField fx:id="spawningTargetTF" layoutX="660" layoutY="110" prefWidth="150" promptText="Enter target" />
+
+    <Button layoutX="450" layoutY="150" onAction="#addTargetOA" prefWidth="120" text="Add Target" />
+
+    <TableView fx:id="spawningTargetsTV" layoutX="450" layoutY="190" prefHeight="150" prefWidth="360">
+        <columns>
+            <TableColumn fx:id="pondTC" prefWidth="150" text="Pond/Tank" />
+            <TableColumn fx:id="targetTC" prefWidth="208.0" text="Target Qty" />
+        </columns>
+    </TableView>
+
+    <!-- Resource Allocation -->
+    <Label layoutX="20" layoutY="330" text="Resource Allocation:" />
+
+    <Button layoutX="20" layoutY="360" onAction="#allocateResourcesOA" prefWidth="150" text="Allocate Resources" />
+
+    <Button layoutX="180" layoutY="360" onAction="#validateScheduleOA" prefWidth="150" text="Validate Schedule" />
+
+    <Button layoutX="340" layoutY="360" onAction="#notifyStaffOA" prefWidth="150" text="Notify Staff" />
+
+    <!-- Production Plan Table -->
+    <Label layoutX="20.0" layoutY="400.0" text="Current Production Plan:" />
+
+    <TableView fx:id="productionPlanTV" layoutX="20" layoutY="434.0" prefHeight="136.0" prefWidth="820">
+        <columns>
+            <TableColumn fx:id="tankTC" prefWidth="120" text="Pond/Tank" />
+            <TableColumn fx:id="broodStockTC" prefWidth="150" text="Broodstock" />
+            <TableColumn fx:id="targetQuantityTC" prefWidth="120" text="Target Qty" />
+            <TableColumn fx:id="resourcesTC" prefWidth="200" text="Resources" />
+            <TableColumn fx:id="scheduleStatusTC" prefWidth="200" text="Schedule Status" />
+        </columns>
+    </TableView>
+
+</AnchorPane>

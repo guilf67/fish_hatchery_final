@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.faisal.equipmentcheckController">
+
+    <Label layoutX="20" layoutY="20" text="Equipment List:" />
+    <TableView fx:id="equipmentTV" layoutX="20" layoutY="50" prefHeight="200" prefWidth="400">
+        <columns>
+            <TableColumn fx:id="idTC" prefWidth="80" text="ID" />
+            <TableColumn fx:id="nameTC" prefWidth="160" text="Name" />
+            <TableColumn fx:id="statusTC" prefWidth="159.0" text="Status" />
+        </columns>
+    </TableView>
+
+    <Label layoutX="450" layoutY="20" text="Maintenance Tasks:" />
+    <TableView fx:id="maintenanceTasksTV" layoutX="450" layoutY="50" prefHeight="200" prefWidth="380">
+        <columns>
+            <TableColumn fx:id="taskTC" prefWidth="200" text="Task" />
+            <TableColumn fx:id="dueDateTC" prefWidth="179.0" text="Due Date" />
+        </columns>
+    </TableView>
+
+    <Label layoutX="20" layoutY="270" text="Inspection / Action:" />
+
+    <TextArea fx:id="issueTA" layoutX="20" layoutY="300" prefHeight="120" prefWidth="400" promptText="Write issue found during inspection..." />
+
+    <Button layoutX="450" layoutY="340" onAction="#updateLogOA" prefWidth="200" text="Update Maintenance Log" />
+
+    <Button layoutX="450" layoutY="380" onAction="#saveReportOA" prefWidth="200" text="Save Maintenance Report" />
+   <Button layoutX="766.0" layoutY="8.0" onAction="#backOA" prefHeight="25.0" prefWidth="64.0" text="Back" />
+
+</AnchorPane>
