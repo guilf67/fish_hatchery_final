@@ -1,6 +1,8 @@
 package com.example.fish_hatchery_final.faisal;
 
 import com.example.fish_hatchery_final.HelloApplication;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,29 +11,75 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class spawingController
-{
+public class spawingController {
+
     @javafx.fxml.FXML
-    private TableColumn broodStockTC;
+    private TableColumn<Spawing, String> broodStockTC;
     @javafx.fxml.FXML
-    private TableColumn tankTC;
+    private TableColumn<Spawing, String> tankTC;
     @javafx.fxml.FXML
-    private TableView PrepTV;
+    private TableColumn<Spawing, String> equipmentTC;
+    @javafx.fxml.FXML
+    private TableColumn<Spawing, String> dateTC;
+    @javafx.fxml.FXML
+    private TableView<Spawing> PrepTV;
+    @javafx.fxml.FXML
+    private TableView<Spawing> spawningScheduleTV;
     @javafx.fxml.FXML
     private TextField eggCountTF;
     @javafx.fxml.FXML
     private TextArea hatchingNoteTA;
-    @javafx.fxml.FXML
-    private TableColumn equipmentTC;
-    @javafx.fxml.FXML
-    private TableColumn dateTC;
-    @javafx.fxml.FXML
-    private TableView spawningScheduleTV;
+
+    private final ObservableList<Spawing> spawningList = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        broodStockTC.setCellValueFactory(new PropertyValueFactory<>("broodStock"));
+        tankTC.setCellValueFactory(new PropertyValueFactory<>("tank"));
+        equipmentTC.setCellValueFactory(new PropertyValueFactory<>("equipment"));
+        dateTC.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        PrepTV.setItems(spawningList);
+        spawningScheduleTV.setItems(spawningList);
+
+        spawningList.add(new Spawing("Batch A", "Tank 1", "Incubator", "2025-01-15", "0", ""));
+    }
+
+    @javafx.fxml.FXML
+    public void recordDataOA(ActionEvent actionEvent) {
+
+        String eggs = eggCountTF.getText();
+        String note = hatchingNoteTA.getText();
+
+        if (eggs == null || eggs.isEmpty()) return;
+
+        spawningList.add(new Spawing(
+                "Batch X",
+                "Tank 2",
+                "Heater",
+                java.time.LocalDate.now().toString(),
+                eggs,
+                note
+        ));
+
+        eggCountTF.clear();
+        hatchingNoteTA.clear();
+    }
+
+    @javafx.fxml.FXML
+    public void saveHatchingOA(ActionEvent actionEvent) {
+
+        for (Spawing s : spawningList) {
+            System.out.println(
+                    s.getBroodStock() + " | " +
+                            s.getTank() + " | " +
+                            s.getEggCount()
+            );
+        }
     }
 
     @javafx.fxml.FXML
@@ -46,16 +94,7 @@ public class spawingController
             nextStage.show();
         }
         catch(Exception e){
-            //
+            e.printStackTrace();
         }
-    }
-
-
-    @javafx.fxml.FXML
-    public void recordDataOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void saveHatchingOA(ActionEvent actionEvent) {
     }
 }

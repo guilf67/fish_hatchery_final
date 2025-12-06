@@ -11,7 +11,7 @@
 
     <Label layoutX="118.0" layoutY="14.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Hatchery Operations Monitoring" />
 
-    <!-- Hatchery ID -->
+
     <Label layoutX="60" layoutY="80" text="Hatchery ID:" />
     <ComboBox fx:id="hatcheryIdCB" layoutX="160" layoutY="75" prefWidth="150" />
 
@@ -22,7 +22,7 @@
 
     <DatePicker fx:id="endDateDP" layoutX="300" layoutY="125" prefWidth="120" />
 
-    <!-- Basic info -->
+
     <Label layoutX="60" layoutY="190" text="Total Eggs:" />
     <Label fx:id="eggsLabel" layoutX="160" layoutY="190" text="--" />
 
@@ -32,24 +32,24 @@
     <Label layoutX="60" layoutY="270" text="Temperature:" />
     <Label fx:id="temperatureLabel" layoutX="160" layoutY="270" text="--" />
 
-    <!-- Historical record -->
+
     <Label layoutX="60" layoutY="320" text="Historical Record:" />
     <TextArea fx:id="historyTA" layoutX="185.0" layoutY="299.0" prefHeight="60" prefWidth="350" wrapText="true" />
 
-    <!-- Warning or normal message -->
+
     <Label fx:id="statusLabel" layoutX="60" layoutY="385" style="-fx-font-weight: bold;" />
 
-    <!-- Alert message -->
+
     <Label fx:id="alertLabel" layoutX="60" layoutY="415" style="-fx-text-fill: red;" />
 
-    <!-- Observations -->
+
     <Label layoutX="60" layoutY="450" text="Observations/Actions:" />
     <TextArea fx:id="observationsTA" layoutX="205.0" layoutY="420.0" prefHeight="60" prefWidth="330" wrapText="true" />
 
-    <!-- Save Button -->
+
     <Button layoutX="197.0" layoutY="508.0" onAction="#saveReportOA" prefWidth="150" text="Save Report" />
 
-    <!-- Logout Button -->
+
     <Button layoutX="480.0" layoutY="17.0" onAction="#backOA" prefWidth="120" text="BACK" />
 
 </AnchorPane>

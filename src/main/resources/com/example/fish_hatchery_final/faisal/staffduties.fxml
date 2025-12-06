@@ -11,28 +11,28 @@
 
     <children>
 
-        <!-- Title -->
+
         <Label layoutX="20" layoutY="20" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Staff Allocation Panel" />
 
-        <!-- Back Button -->
+
         <Button layoutX="520" layoutY="20" onAction="#backOA" prefWidth="100" text="BACK" />
 
-        <!-- Staff Selection -->
+
         <Label layoutX="20" layoutY="80" text="Select Staff:" />
         <ComboBox fx:id="staffCB" layoutX="140" layoutY="75" prefWidth="180" />
 
-        <!-- Task Selection -->
+
         <Label layoutX="20" layoutY="130" text="Task:" />
         <ComboBox fx:id="taskCB" layoutX="140" layoutY="125" prefWidth="180" />
 
-        <!-- Shift -->
+
         <Label layoutX="20" layoutY="180" text="Shift:" />
         <ComboBox fx:id="shiftCB" layoutX="140" layoutY="175" prefWidth="180" />
 
-        <!-- Assign Button -->
+
         <Button layoutX="350" layoutY="125" onAction="#assignTaskOA" prefWidth="120" text="Assign" />
 
-        <!-- Table -->
+
         <TableView fx:id="allocationTV" layoutX="20" layoutY="230" prefHeight="180" prefWidth="610">
             <columns>
                 <TableColumn fx:id="staffCol" prefWidth="200" text="Staff" />
@@ -41,11 +41,11 @@
             </columns>
         </TableView>
 
-        <!-- Notification Area -->
+
         <Label layoutX="20" layoutY="425" text="Message / Status:" />
         <Label fx:id="statusLabel" layoutX="150" layoutY="425" style="-fx-text-fill: green;" />
 
-        <!-- Save & Notify Buttons -->
+
         <Button layoutX="150" layoutY="450" onAction="#saveRecordsOA" prefWidth="150" text="Save Records" />
 
         <Button layoutX="320" layoutY="450" onAction="#notifyStaffOA" prefWidth="150" text="Notify Staff" />

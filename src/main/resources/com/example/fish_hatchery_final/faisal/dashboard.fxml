@@ -12,16 +12,12 @@
          <Font size="9.0" />
       </font></Label>
 
-    <!-- Button 1: Goal-1 Monitoring -->
     <Button layoutX="180" layoutY="100" onAction="#openHatcheryMonitoringOA" prefHeight="40" prefWidth="250" text="Hatchery Operations Monitoring" />
 
-    <!-- Button 2: Goal-2 Staff Allocation -->
     <Button layoutX="180" layoutY="160" onAction="#openStaffAllocationOA" prefHeight="40" prefWidth="250" text="Allocate Staff Duties" />
 
-    <!-- Button 3: Goal-3 Production Planning -->
     <Button layoutX="180" layoutY="220" onAction="#openProductionPlanningOA" prefHeight="40" prefWidth="250" text="Plan Production Cycle" />
 
-    <!-- Logout Button -->
     <Button layoutX="240.0" layoutY="300.0" onAction="#logoutOA" prefHeight="35" prefWidth="120" text="Logout" />
 
 

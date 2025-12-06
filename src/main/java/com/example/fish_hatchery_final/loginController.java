@@ -37,30 +37,30 @@ public class loginController {
             Stage stage = (Stage) usernameBox.getScene().getWindow();
             stage.setScene(new Scene(root));
            stage.show();
-       } else if ("waterquality".equals(username) && "anika".equals(password)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("anika/waterqualityspecialist.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) usernameBox.getScene().getWindow();
-           stage.setScene(new Scene(root));
-           stage.show();
-        } else if ("feedmanager".equals(username) && "anika".equals(password)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("anika/feedmanager.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) usernameBox.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } else if ("HatcheryOperator".equals(username) && "akkhorik".equals(password)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Akkhorik/hatcheryoperator.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) usernameBox.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } else if ("Inventory".equals(username) && "akkhorik".equals(password)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Akkhorik/inventory.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) usernameBox.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
+        //} else if ("Data Entry".equals(username) && "mandira".equals(password)) {
+          //  FXMLLoader loader = new FXMLLoader(getClass().getResource("Mandira_2321486/DataEntryDash.fxml"));
+          //  Parent root = loader.load();
+          //  Stage stage = (Stage) usernameBox.getScene().getWindow();
+          // stage.setScene(new Scene(root));
+          // stage.show();
+        //} else if ("Reporter".equals(username) && "mandira".equals(password)) {
+          //  FXMLLoader loader = new FXMLLoader(getClass().getResource("Mandira_2321486/ReporterDash.fxml"));
+          //  Parent root = loader.load();
+          //  Stage stage = (Stage) usernameBox.getScene().getWindow();
+          //  stage.setScene(new Scene(root));
+           // stage.show();
+       // } else if ("Customer Engagement Manager".equals(username) && "mushfiq".equals(password)) {
+         //   FXMLLoader loader = new FXMLLoader(getClass().getResource("Mushfiq_2321450/CustomerEngagementManagerDash.fxml"));
+           // Parent root = loader.load();
+          //  Stage stage = (Stage) usernameBox.getScene().getWindow();
+          //  stage.setScene(new Scene(root));
+          //  stage.show();
+       // } else if ("Layout Designer".equals(username) && "mushfiq".equals(password)) {
+           // FXMLLoader loader = new FXMLLoader(getClass().getResource("Mushfiq_2321450/LayoutDesignerDash.fxml"));
+          //  Parent root = loader.load();
+          //  Stage stage = (Stage) usernameBox.getScene().getWindow();
+          //  stage.setScene(new Scene(root));
+          //  stage.show();
         } else {
             massageLabel.setText("Incorrect username or password. Please try again.");
         }
