@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.forecastController">
+    <children>
+        <Label layoutX="219.0" layoutY="7.0" prefHeight="34.0" prefWidth="79.0" text="Feed Forecast" />
+        <Label layoutX="37.0" layoutY="51.0" text="Forecast Input" />
+        <Label layoutX="37.0" layoutY="88.0" text="season" />
+        <Label layoutX="201.0" layoutY="88.0" text="Species" />
+        <Label layoutX="369.0" layoutY="89.0" text="Stock Quantity" />
+        <Label layoutX="38.0" layoutY="122.0" prefHeight="43.0" prefWidth="97.0" text="Adjust Parameters" />
+        <Label layoutX="38.0" layoutY="171.0" prefHeight="17.0" prefWidth="79.0" text="Adjust Notes" />
+        <TextField fx:id="seasonTF" layoutX="79.0" layoutY="85.0" prefHeight="25.0" prefWidth="113.0" />
+        <TextField fx:id="stockQuantityTF" layoutX="454.0" layoutY="85.0" prefHeight="17.0" prefWidth="113.0" />
+        <TextField fx:id="speciesTF" layoutX="244.0" layoutY="85.0" prefHeight="17.0" prefWidth="113.0" />
+        <TextField fx:id="adjustNotesTF" layoutX="117.0" layoutY="167.0" prefHeight="25.0" prefWidth="191.0" />
+        <Button layoutX="471.0" layoutY="29.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Button layoutX="408.0" layoutY="136.0" mnemonicParsing="false" onAction="#applyOA" text="Apply" />
+        <Button layoutX="408.0" layoutY="167.0" mnemonicParsing="false" onAction="#saceForecastOA" text="Save Forecast" />
+        <Label layoutX="37.0" layoutY="200.0" text="Expected Monthly Feed Requirements" />
+        <TableView layoutX="13.0" layoutY="225.0" prefHeight="200.0" prefWidth="578.0">
+            <columns>
+                <TableColumn fx:id="monthCol" prefWidth="75.0" text="Month" />
+                <TableColumn fx:id="forecastFeedCol" prefWidth="199.0" text="Forecast Feed" />
+                <TableColumn fx:id="statuaCol" prefWidth="129.0" text="Status" />
+                <TableColumn fx:id="suggestedActionCol" prefWidth="174.0" text="Suggested Action" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

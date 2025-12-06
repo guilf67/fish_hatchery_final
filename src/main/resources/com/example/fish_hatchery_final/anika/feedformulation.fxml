@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.feedformulationController">
+    <children>
+        <Label layoutX="41.0" layoutY="53.0" text="New Feed Formula" />
+        <Label layoutX="207.0" layoutY="14.0" prefHeight="30.0" prefWidth="93.0" text="Feed Formulation" />
+        <Label layoutX="41.0" layoutY="96.0" text="Fish Species:" />
+        <Label layoutX="46.0" layoutY="136.0" text="Protein(%):" />
+        <Label layoutX="233.0" layoutY="96.0" text="Growth Phase:" />
+        <Label layoutX="187.0" layoutY="136.0" prefHeight="17.0" prefWidth="58.0" text="Lipid(%):" />
+        <Label layoutX="315.0" layoutY="136.0" text="Vitamin Level:" />
+        <TextField fx:id="fishSpeciesTF" layoutX="110.0" layoutY="92.0" prefHeight="25.0" prefWidth="113.0" />
+        <TextField fx:id="growthPhaseTF" layoutX="315.0" layoutY="92.0" prefHeight="25.0" prefWidth="113.0" />
+        <TextField fx:id="proteinTF" layoutX="110.0" layoutY="132.0" prefHeight="25.0" prefWidth="58.0" />
+        <TextField fx:id="lipidTF" layoutX="242.0" layoutY="132.0" prefHeight="25.0" prefWidth="58.0" />
+        <TextField fx:id="vitaminLevelTF" layoutX="399.0" layoutY="132.0" prefHeight="25.0" prefWidth="58.0" />
+        <Button layoutX="496.0" layoutY="101.0" mnemonicParsing="false" onAction="#validateOA" text="Validate" />
+        <Button layoutX="505.0" layoutY="141.0" mnemonicParsing="false" onAction="#saveOA" text="Save" />
+        <Button layoutX="505.0" layoutY="32.0" mnemonicParsing="false" onAction="#backOA" prefHeight="0.0" prefWidth="41.0" text="Back" />
+        <Label layoutX="46.0" layoutY="177.0" text="Save Formulation" />
+        <TableView fx:id="saveFormulationTV" layoutX="8.0" layoutY="200.0" prefHeight="200.0" prefWidth="589.0">
+            <columns>
+                <TableColumn fx:id="fishSpeciesCol" prefWidth="122.0" text="Fish Species" />
+                <TableColumn fx:id="proteinCol" prefWidth="69.0" text="Protein(%)" />
+                <TableColumn fx:id="lipidCol" prefWidth="104.0" text="Lipid(%)" />
+                <TableColumn fx:id="vitaminLevelCol" prefWidth="106.0" text="Vitamin Level" />
+                <TableColumn fx:id="batchIdCol" prefWidth="107.0" text="Batch ID" />
+                <TableColumn fx:id="notesCol" text="Notes" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

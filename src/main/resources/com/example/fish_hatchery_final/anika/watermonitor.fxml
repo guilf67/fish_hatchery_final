@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.watermonitorController">
+    <children>
+        <Label layoutX="229.0" layoutY="25.0" prefHeight="25.0" prefWidth="103.0" text="Water Monitoring" />
+        <Label layoutX="44.0" layoutY="73.0" prefHeight="17.0" prefWidth="67.0" text="pond:" />
+        <ComboBox fx:id="ComboBox" layoutX="111.0" layoutY="69.0" prefHeight="25.0" prefWidth="76.0" />
+        <Label layoutX="223.0" layoutY="73.0" text="Alerts:" />
+        <Label layoutX="40.0" layoutY="110.0" text="Previous Readings (Selected Pond)" />
+        <TableView fx:id="previousReadingsTV" layoutX="34.0" layoutY="136.0" prefHeight="129.0" prefWidth="552.0">
+            <columns>
+                <TableColumn fx:id="dateTimeCol" prefWidth="127.0" text="DateTime" />
+                <TableColumn fx:id="temperatureCol" prefWidth="87.0" text="Temperature" />
+                <TableColumn fx:id="pHCol" prefWidth="45.0" text="pH" />
+                <TableColumn fx:id="dOCol" prefWidth="90.0" text="DO(mg/L)" />
+                <TableColumn fx:id="ammoniaCol" prefWidth="102.0" text="Ammonia" />
+                <TableColumn fx:id="nitriteCol" prefWidth="100.0" text="Nitrite" />
+            </columns>
+        </TableView>
+        <Label layoutX="44.0" layoutY="284.0" text="New Reading Input" />
+        <Label layoutX="149.0" layoutY="319.0" text="pH" />
+        <Label layoutX="230.0" layoutY="319.0" text="DO(mg/L)" />
+        <Label layoutX="360.0" layoutY="319.0" text="Ammonia" />
+        <Label layoutX="477.0" layoutY="319.0" text="Nitrite" />
+        <Label layoutX="21.0" layoutY="319.0" text="Temperature" />
+        <TextField fx:id="temperatureTF" layoutX="94.0" layoutY="315.0" prefHeight="17.0" prefWidth="34.0" />
+        <TextField fx:id="pHTF" layoutX="170.0" layoutY="315.0" prefHeight="17.0" prefWidth="34.0" />
+        <TextField fx:id="dOTF" layoutX="293.0" layoutY="315.0" prefHeight="17.0" prefWidth="34.0" />
+        <TextField fx:id="amoniaTF" layoutX="422.0" layoutY="315.0" prefHeight="17.0" prefWidth="34.0" />
+        <TextField fx:id="nitriteTF" layoutX="528.0" layoutY="315.0" prefHeight="25.0" prefWidth="53.0" />
+        <Button layoutX="84.0" layoutY="350.0" mnemonicParsing="false" onAction="#validateDateOA" text="Validate Date" />
+        <Button layoutX="212.0" layoutY="350.0" mnemonicParsing="false" onAction="#saveReadingOA" text="Save Reading" />
+        <Button layoutX="346.0" layoutY="350.0" mnemonicParsing="false" onAction="#generateDailyReportOA" text="Generate Daily Report" />
+        <Button layoutX="477.0" layoutY="38.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="targetpHTF" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.pHcontrolController">
+    <children>
+        <Label layoutX="224.0" layoutY="14.0" text="PH Control Panel" />
+        <Label layoutX="37.0" layoutY="59.0" text="Adjustment for Selected Pond" />
+        <Label layoutX="50.0" layoutY="92.0" text="Pond:" />
+        <Label layoutX="253.0" layoutY="92.0" text="Current pH:" />
+        <Label layoutX="401.0" layoutY="92.0" prefHeight="17.0" prefWidth="62.0" text="Target pH:" />
+        <Label layoutX="207.0" layoutY="137.0" prefHeight="28.0" prefWidth="119.0" text="Dose Amount (kg/l):" />
+        <TextField fx:id="currentpHTF" layoutX="326.0" layoutY="88.0" prefHeight="25.0" prefWidth="62.0" />
+        <TextField fx:id="targetphTF" layoutX="471.0" layoutY="88.0" prefHeight="25.0" prefWidth="51.0" />
+        <ComboBox fx:id="pondCB" layoutX="90.0" layoutY="88.0" prefHeight="25.0" prefWidth="127.0" />
+        <Label layoutX="52.0" layoutY="143.0" prefHeight="17.0" prefWidth="62.0" text="Chemical:" />
+        <TextField fx:id="adjustDatetimeTF" layoutX="157.0" layoutY="184.0" prefHeight="25.0" prefWidth="193.0" />
+        <TextField fx:id="doseAmountTF" layoutX="317.0" layoutY="139.0" prefHeight="25.0" prefWidth="80.0" />
+        <Label layoutX="37.0" layoutY="188.0" prefHeight="17.0" prefWidth="119.0" text="Adjustment Datetime:" />
+        <ComboBox fx:id="chemicalCB" layoutX="108.0" layoutY="139.0" prefHeight="25.0" prefWidth="91.0" />
+        <Button layoutX="419.0" layoutY="139.0" mnemonicParsing="false" onAction="#applyDoseOA" text="Apply Dose" />
+        <Button layoutX="522.0" layoutY="139.0" mnemonicParsing="false" onAction="#verifypHOA" text="Verify pH" />
+        <Button layoutX="392.0" layoutY="184.0" mnemonicParsing="false" onAction="#saveGenerateReportOA" text="Save Generate Report" />
+        <Button layoutX="471.0" layoutY="23.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <TableView fx:id="pHcontrolTV" layoutX="8.0" layoutY="221.0" prefHeight="200.0" prefWidth="582.0">
+            <columns>
+                <TableColumn fx:id="pondCol" prefWidth="151.0" text="Pond" />
+                <TableColumn fx:id="CurrentphCol" prefWidth="142.0" text="Current pH" />
+                <TableColumn fx:id="statusCol" prefWidth="151.0" text="Status(Low/High/Ok)" />
+                <TableColumn fx:id="lastAdjustmentCol" prefWidth="137.0" text="Last Adjustment" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

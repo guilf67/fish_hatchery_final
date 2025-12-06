@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.feedreportController">
+    <children>
+        <Label layoutX="236.0" layoutY="14.0" prefHeight="33.0" prefWidth="84.0" text="Feed Report" />
+        <Label layoutX="39.0" layoutY="47.0" text="Report Filter" />
+        <Label layoutX="39.0" layoutY="93.0" text="Month" />
+        <Label layoutX="200.0" layoutY="93.0" prefHeight="17.0" prefWidth="36.0" text="Pond" />
+        <TextField fx:id="monthTF" layoutX="81.0" layoutY="89.0" prefHeight="25.0" prefWidth="102.0" />
+        <ComboBox fx:id="pondCB" layoutX="236.0" layoutY="89.0" prefWidth="150.0" />
+        <Button layoutX="489.0" layoutY="31.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Button layoutX="450.0" layoutY="89.0" mnemonicParsing="false" onAction="#loadRecordsOA" text="Load Records" />
+        <Label layoutX="39.0" layoutY="125.0" prefHeight="33.0" prefWidth="127.0" text="Monthly Feed Summary" />
+        <TableView fx:id="monthlyFeedTV" layoutX="10.0" layoutY="158.0" prefHeight="179.0" prefWidth="583.0">
+            <columns>
+                <TableColumn fx:id="dateCol" prefWidth="138.0" text="Date" />
+                <TableColumn fx:id="FeedUsedCol" prefWidth="126.0" text="Feed Used " />
+                <TableColumn fx:id="efficiencyCol" prefWidth="117.0" text="Efficiency(%)" />
+                <TableColumn fx:id="technicianNotesCol" prefWidth="107.0" text="Technician Notes" />
+                <TableColumn fx:id="alertsCol" prefWidth="107.0" text="Alerts" />
+            </columns>
+        </TableView>
+        <Button layoutX="75.0" layoutY="356.0" mnemonicParsing="false" onAction="#exportPdfOA" text="Export As PDF" />
+        <Button layoutX="211.0" layoutY="361.0" mnemonicParsing="false" onAction="#exportCsvOA" text="Export As CSV" />
+        <Button layoutX="342.0" layoutY="361.0" mnemonicParsing="false" onAction="#mailRecordManagerOA" text="Mail Record To Manager" />
+    </children>
+</AnchorPane>

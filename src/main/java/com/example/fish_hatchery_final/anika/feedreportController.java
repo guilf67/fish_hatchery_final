@@ -1,0 +1,67 @@
+package com.example.fish_hatchery_final.anika;
+
+import com.example.fish_hatchery_final.HelloApplication;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class feedreportController
+{
+    @javafx.fxml.FXML
+    private TableView monthlyFeedTV;
+    @javafx.fxml.FXML
+    private TableColumn FeedUsedCol;
+    @javafx.fxml.FXML
+    private TableColumn dateCol;
+    @javafx.fxml.FXML
+    private TableColumn technicianNotesCol;
+    @javafx.fxml.FXML
+    private TextField monthTF;
+    @javafx.fxml.FXML
+    private TableColumn efficiencyCol;
+    @javafx.fxml.FXML
+    private ComboBox pondCB;
+    @javafx.fxml.FXML
+    private TableColumn alertsCol;
+
+    @javafx.fxml.FXML
+    public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void mailRecordManagerOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void exportPdfOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("anika/feedmanager.fxml"));
+            Scene nextScene = new Scene(fxmlLoader.load());
+            Stage nextStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            nextStage.setTitle("Feed Manager");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void exportCsvOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void loadRecordsOA(ActionEvent actionEvent) {
+    }
+}

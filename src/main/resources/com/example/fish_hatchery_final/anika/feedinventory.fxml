@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.feedinventoryController">
+    <children>
+        <Label layoutX="229.0" layoutY="1.0" prefHeight="48.0" prefWidth="80.0" text="Feed Inventory" />
+        <Label layoutX="34.0" layoutY="34.0" prefHeight="32.0" prefWidth="72.0" text="Update Stock" />
+        <Label layoutX="34.0" layoutY="82.0" text="Feed Type" />
+        <Label layoutX="229.0" layoutY="82.0" prefHeight="17.0" prefWidth="80.0" text="Quantity(kg)" />
+        <Label layoutX="409.0" layoutY="82.0" text="Action" />
+        <Label layoutX="19.0" layoutY="112.0" prefHeight="32.0" prefWidth="103.0" text="Record Information" />
+        <Label layoutX="48.0" layoutY="163.0" text="Supplier" />
+        <Label layoutX="229.0" layoutY="163.0" text="Recorder Qty" />
+        <Label layoutX="19.0" layoutY="192.0" prefHeight="32.0" prefWidth="126.0" text="Current Stock Summary" />
+        <ComboBox fx:id="actionCB" layoutX="454.0" layoutY="78.0" prefHeight="25.0" prefWidth="126.0" />
+        <TextField fx:id="feedTypeTF" layoutX="94.0" layoutY="78.0" prefHeight="25.0" prefWidth="103.0" />
+        <TextField fx:id="quantityTF" layoutX="299.0" layoutY="78.0" prefHeight="25.0" prefWidth="103.0" />
+        <TextField layoutX="309.0" layoutY="159.0" onAction="#recordeQtyTF" prefHeight="25.0" prefWidth="103.0" />
+        <TextField fx:id="supplierTF" layoutX="106.0" layoutY="159.0" prefHeight="25.0" prefWidth="103.0" />
+        <Button layoutX="460.0" layoutY="144.0" mnemonicParsing="false" onAction="#recordUpdateOA" prefHeight="25.0" prefWidth="115.0" text="Record Update" />
+        <Button layoutX="481.0" layoutY="22.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Button layoutX="462.0" layoutY="180.0" mnemonicParsing="false" onAction="#confirmRecordOA" text="Confirm Recorder" />
+        <TableView fx:id="currentTV" layoutX="7.0" layoutY="224.0" prefHeight="182.0" prefWidth="585.0">
+            <columns>
+                <TableColumn fx:id="feedTypeCol" prefWidth="75.0" text="Feed Type" />
+                <TableColumn fx:id="availableCol" prefWidth="162.0" text="Available" />
+                <TableColumn fx:id="usedCol" prefWidth="99.0" text="used" />
+                <TableColumn fx:id="purchasedCol" prefWidth="82.0" text="Purchased" />
+                <TableColumn fx:id="alertCol" prefWidth="166.0" text="Alert" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.weeklytestsController">
+    <children>
+        <Label layoutX="230.0" layoutY="14.0" prefHeight="36.0" prefWidth="70.0" text="water Tests" />
+        <Label layoutX="33.0" layoutY="67.0" text="Create Test Schedule" />
+        <Label layoutX="36.0" layoutY="95.0" prefWidth="31.0" text="pond:" />
+        <Label layoutX="20.0" layoutY="130.0" prefHeight="17.0" prefWidth="64.0" text="Technician:" />
+        <ComboBox fx:id="pondCB" layoutX="75.0" layoutY="91.0" prefHeight="17.0" prefWidth="80.0" />
+        <ComboBox fx:id="technicianCB" layoutX="84.0" layoutY="126.0" prefHeight="17.0" prefWidth="80.0" />
+        <Label layoutX="230.0" layoutY="95.0" text="Date:" />
+        <Label layoutX="413.0" layoutY="95.0" text="Time:" />
+        <DatePicker fx:id="dateDP" layoutX="265.0" layoutY="91.0" prefHeight="25.0" prefWidth="120.0" />
+        <TextField fx:id="timeTF" layoutX="453.0" layoutY="91.0" prefHeight="25.0" prefWidth="98.0" />
+        <Button layoutX="392.0" layoutY="126.0" mnemonicParsing="false" onAction="#clearOA" text="Clear" />
+        <Button layoutX="466.0" layoutY="32.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Button layoutX="181.0" layoutY="126.0" mnemonicParsing="false" onAction="#saveUpdateOA" text="Save/Update" />
+        <Button layoutX="446.0" layoutY="126.0" mnemonicParsing="false" onAction="#deleteSelectesOA" text="Delete Selected" />
+        <Button layoutX="270.0" layoutY="126.0" mnemonicParsing="false" onAction="#validateScheduleOA" text="Validate Schedule" />
+        <TableView fx:id="waterTestTV" layoutX="15.0" layoutY="174.0" prefHeight="200.0" prefWidth="568.0">
+            <columns>
+                <TableColumn fx:id="pondCol" maxWidth="1180.0" minWidth="30.0" prefWidth="118.0" text="pond" />
+                <TableColumn fx:id="dateCol" maxWidth="1230.0" minWidth="30.0" prefWidth="123.0" text="Date" />
+                <TableColumn fx:id="technicianCol" maxWidth="900.0" minWidth="30.0" prefWidth="90.0" text="Technician" />
+                <TableColumn fx:id="statusTCCol" maxWidth="1270.0" minWidth="30.0" prefWidth="127.0" text="Status/Note" />
+                <TableColumn fx:id="timeTCCol" maxWidth="1090.0" minWidth="30.0" prefWidth="109.0" text="Time" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.growthevaluationController">
+    <children>
+        <Label layoutX="220.0" layoutY="-1.0" prefHeight="42.0" prefWidth="97.0" text="Growth Evaluation" />
+        <Label layoutX="20.0" layoutY="54.0" text="Batch ID" />
+        <Label layoutX="175.0" layoutY="54.0" text="Avg Sample Weight(g)" />
+        <Label layoutX="406.0" layoutY="54.0" text="Target FCR" />
+        <TextField fx:id="batchIdTF" layoutX="71.0" layoutY="50.0" prefHeight="25.0" prefWidth="89.0" />
+        <TextField fx:id="avgSamWeightTF" layoutX="300.0" layoutY="50.0" prefHeight="25.0" prefWidth="97.0" />
+        <TextField fx:id="targetFcrTF" layoutX="479.0" layoutY="50.0" prefHeight="25.0" prefWidth="89.0" />
+        <Button layoutX="160.0" layoutY="105.0" mnemonicParsing="false" onAction="#applyFeedSuggetionOA" prefHeight="25.0" prefWidth="155.0" text="Apply Feeding Suggetion" />
+        <Button layoutX="43.0" layoutY="105.0" mnemonicParsing="false" onAction="#calculateFcrOA" text="Calculate FCR" />
+        <Button layoutX="336.0" layoutY="105.0" mnemonicParsing="false" onAction="#saveReportOA" prefHeight="25.0" prefWidth="88.0" text="Save Report" />
+        <Button layoutX="452.0" layoutY="105.0" mnemonicParsing="false" onAction="#saveToManagerOA" prefHeight="25.0" prefWidth="129.0" text="Save to Manager" />
+        <Button layoutX="464.0" layoutY="14.0" mnemonicParsing="false" onAction="#backOA" prefHeight="2.0" prefWidth="52.0" text="Back" />
+        <Label layoutX="26.0" layoutY="145.0" text="Batch Growth Summary" />
+        <TableView fx:id="batchGrowthSumTV" layoutX="6.0" layoutY="171.0" prefHeight="200.0" prefWidth="588.0">
+            <columns>
+                <TableColumn fx:id="batchIdCol" prefWidth="110.0" text="Batch ID" />
+                <TableColumn fx:id="sampleWeightCol" prefWidth="110.0" text="Sample Weight" />
+                <TableColumn fx:id="calculateFcrCol" prefWidth="85.0" text="Calculate FCR" />
+                <TableColumn fx:id="targetFcrCol" prefWidth="89.0" text="Target FCR" />
+                <TableColumn fx:id="performanceStatusCol" prefWidth="104.0" text="Performance Status" />
+                <TableColumn fx:id="feedingSugationCol" prefWidth="89.0" text=" Feeding Suggetion" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

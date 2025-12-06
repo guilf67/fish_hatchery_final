@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.feedmanagerController">
+    <children>
+        <Label layoutX="229.0" layoutY="27.0" prefHeight="50.0" prefWidth="82.0" text="Feed Manager" />
+        <Button layoutX="76.0" layoutY="118.0" mnemonicParsing="false" onAction="#feedScheduleOA" text="Feed Schedule" />
+        <Button layoutX="79.0" layoutY="175.0" mnemonicParsing="false" onAction="#feedMonitorOA" text="Feed Monitor" />
+        <Button layoutX="76.0" layoutY="222.0" mnemonicParsing="false" onAction="#feedFormulationOA" text="Feed Formulation" />
+        <Button layoutX="447.0" layoutY="337.0" mnemonicParsing="false" onAction="#logOutOA" text="Log Out" />
+        <Button layoutX="83.0" layoutY="270.0" mnemonicParsing="false" onAction="#feedInventoryOA" text="Feed Inventory" />
+        <Button layoutX="351.0" layoutY="222.0" mnemonicParsing="false" onAction="#feedForecastOA" text="Feed Forecast" />
+        <Button layoutX="351.0" layoutY="175.0" mnemonicParsing="false" onAction="#feedQualityOA" text="Feed Quality" />
+        <Button layoutX="351.0" layoutY="118.0" mnemonicParsing="false" onAction="#growthEvaluationOA" text="Growth Evaluation" />
+        <Button layoutX="358.0" layoutY="270.0" mnemonicParsing="false" onAction="#feedReportOA" text="Feed Report" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.realtimemonitoringController">
+    <children>
+        <Label layoutX="218.0" layoutY="23.0" text="Real Time Monitoring" />
+        <Label layoutX="34.0" layoutY="40.0" prefHeight="46.0" prefWidth="39.0" text="Alerts" />
+        <Label layoutX="220.0" layoutY="84.0" text="Ammonia" />
+        <Label layoutX="405.0" layoutY="83.0" text="Last Update " />
+        <Label layoutX="14.0" layoutY="92.0" text="Do(Dissolved Oxygen)" />
+        <Label layoutX="20.0" layoutY="125.0" text="Do Min" />
+        <Label layoutX="207.0" layoutY="125.0" text="Ammonia Max" />
+        <Label layoutX="405.0" layoutY="125.0" text="Corrective Action Notes" />
+        <TextField fx:id="doMinTF" layoutX="73.0" layoutY="121.0" prefHeight="25.0" prefWidth="85.0" />
+        <TextField fx:id="ammoniaMaxTF" layoutX="291.0" layoutY="121.0" prefHeight="25.0" prefWidth="85.0" />
+        <TextField fx:id="ammoniaTF" layoutX="284.0" layoutY="80.0" prefHeight="25.0" prefWidth="85.0" />
+        <TextField fx:id="lastUpdateTF" layoutX="472.0" layoutY="80.0" prefHeight="25.0" prefWidth="85.0" />
+        <TextField fx:id="doTF" layoutX="144.0" layoutY="88.0" prefHeight="25.0" prefWidth="52.0" />
+        <TextField fx:id="correctiveActionNotesTF" layoutX="538.0" layoutY="121.0" prefHeight="25.0" prefWidth="39.0" />
+        <TableView fx:id="realTimeTV" layoutX="2.0" layoutY="162.0" prefHeight="158.0" prefWidth="593.0">
+            <columns>
+                <TableColumn fx:id="timeCol" prefWidth="75.0" text="Time" />
+                <TableColumn fx:id="doCol" prefWidth="215.0" text="Do" />
+                <TableColumn fx:id="ammoniaCol" prefWidth="150.0" text="Ammonia" />
+                <TableColumn fx:id="statusCol" prefWidth="152.0" text="Status" />
+            </columns>
+        </TableView>
+        <Button layoutX="20.0" layoutY="340.0" mnemonicParsing="false" onAction="#startMonitorOA" text="Start Monitoring" />
+        <Button layoutX="158.0" layoutY="340.0" mnemonicParsing="false" onAction="#updateOA" text="Update" />
+        <Button layoutX="489.0" layoutY="28.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Button layoutX="265.0" layoutY="341.0" mnemonicParsing="false" onAction="#generateSummaryOA" text="Grenerate Summary" />
+        <Button layoutX="463.0" layoutY="340.0" mnemonicParsing="false" onAction="#archiveOA" text="Archive" />
+    </children>
+</AnchorPane>

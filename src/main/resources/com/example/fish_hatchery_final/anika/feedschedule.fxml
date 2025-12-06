@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.feedscheduleController">
+    <children>
+        <Label layoutX="185.0" layoutY="9.0" prefHeight="17.0" prefWidth="83.0" text="Feed Schedule" />
+        <Label layoutX="41.0" layoutY="55.0" text="Pond:" />
+        <Label layoutX="28.0" layoutY="94.0" text="Feed Type:" />
+        <Label layoutX="193.0" layoutY="55.0" text="Fish Species:" />
+        <Label layoutX="217.0" layoutY="94.0" text="Quantity:" />
+        <Label layoutX="396.0" layoutY="63.0" prefHeight="17.0" prefWidth="83.0" text="Growth Stage:" />
+        <Label layoutX="411.0" layoutY="103.0" text="Time Slot:" />
+        <ComboBox fx:id="pondCB" layoutX="79.0" layoutY="51.0" prefHeight="25.0" prefWidth="96.0" />
+        <TextField fx:id="feedTypeTF" layoutX="97.0" layoutY="90.0" prefHeight="25.0" prefWidth="96.0" />
+        <TextField fx:id="quantityTF" layoutX="278.0" layoutY="90.0" prefHeight="25.0" prefWidth="96.0" />
+        <TextField fx:id="timeSlotTF" layoutX="464.0" layoutY="99.0" prefHeight="25.0" prefWidth="96.0" />
+        <TextField fx:id="fishSpeciesTF" layoutX="268.0" layoutY="47.0" prefHeight="25.0" prefWidth="96.0" />
+        <TextField fx:id="growthStageTF" layoutX="479.0" layoutY="60.0" prefHeight="25.0" prefWidth="96.0" />
+        <Button layoutX="22.0" layoutY="127.0" mnemonicParsing="false" onAction="#previewPlanOA" text="Preview Plan" />
+        <Button layoutX="132.0" layoutY="127.0" mnemonicParsing="false" onAction="#calculateTotalFeedOA" text="Calculate Total Feed" />
+        <Button layoutX="282.0" layoutY="127.0" mnemonicParsing="false" onAction="#editOA" text="Edit" />
+        <Button layoutX="342.0" layoutY="127.0" mnemonicParsing="false" onAction="#saveNotifyOA" text="Save Notify" />
+        <Button layoutX="464.0" layoutY="17.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Label layoutX="35.0" layoutY="175.0" prefHeight="17.0" prefWidth="141.0" text="Feed Schedule Summary" />
+        <TableView fx:id="feedScheduleSumTV" layoutX="6.0" layoutY="200.0" prefHeight="200.0" prefWidth="582.0">
+            <columns>
+                <TableColumn fx:id="pondCol" prefWidth="75.0" text="pond" />
+                <TableColumn fx:id="fishSpeciesCol" prefWidth="96.0" text="Fish Species" />
+                <TableColumn fx:id="growthStageCol" prefWidth="89.0" text="Growth Stage" />
+                <TableColumn fx:id="feedTypeCol" prefWidth="104.0" text="Feed Type" />
+                <TableColumn fx:id="quantityCol" prefWidth="72.0" text="Quantity" />
+                <TableColumn fx:id="timeSlotCol" prefWidth="145.0" text="Time Slot" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

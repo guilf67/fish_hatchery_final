@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="487.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.feedqualityController">
+    <children>
+        <Label layoutX="204.0" layoutY="3.0" prefHeight="46.0" prefWidth="116.0" text="Feed Quality Control" />
+        <Label layoutX="39.0" layoutY="47.0" prefHeight="33.0" prefWidth="116.0" text="Quality Check Input" />
+        <Label layoutX="10.0" layoutY="106.0" text="Feed Batch No" />
+        <Label layoutX="190.0" layoutY="106.0" text="Moisture(%)" />
+        <Label layoutX="333.0" layoutY="106.0" text="Protien(%)" />
+        <Label layoutX="500.0" layoutY="107.0" text="Fat(%)" />
+        <Button layoutX="159.0" layoutY="165.0" mnemonicParsing="false" onAction="#approveOA" text="Approve" />
+        <Button layoutX="238.0" layoutY="165.0" mnemonicParsing="false" onAction="#rejectOA" text="Reject" />
+        <Button layoutX="326.0" layoutY="165.0" mnemonicParsing="false" onAction="#saveQCresultOA" text="Save QC Result" />
+        <Button layoutX="449.0" layoutY="165.0" mnemonicParsing="false" onAction="#generateCertificateOA" text="Generate Certificate" />
+        <Button layoutX="479.0" layoutY="37.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Label layoutX="49.0" layoutY="195.0" prefHeight="33.0" prefWidth="143.0" text="Feed Quality Check History" />
+        <TableView layoutX="19.0" layoutY="228.0" prefHeight="200.0" prefWidth="627.0">
+            <columns>
+                <TableColumn fx:id="batchNoCol" prefWidth="130.0" text="Batch No" />
+                <TableColumn fx:id="moistureCol" prefWidth="118.0" text="Moisture(%)" />
+                <TableColumn fx:id="proteinCol" prefWidth="65.0" text="Protien(%)" />
+                <TableColumn fx:id="fatCol" prefWidth="118.0" text="Fat(%)" />
+                <TableColumn fx:id="qcStatusCOL" prefWidth="69.0" text="QC Status" />
+                <TableColumn fx:id="remarksCol" prefWidth="126.0" text="Remarks" />
+            </columns>
+        </TableView>
+        <TextField fx:id="feedBatchNoTF" layoutX="97.0" layoutY="102.0" prefHeight="25.0" prefWidth="87.0" />
+        <TextField fx:id="moistureTF" layoutX="262.0" layoutY="103.0" prefHeight="25.0" prefWidth="65.0" />
+        <TextField fx:id="protienTF" layoutX="389.0" layoutY="102.0" prefHeight="25.0" prefWidth="87.0" />
+        <TextField fx:id="fatTF" layoutX="537.0" layoutY="103.0" prefHeight="25.0" prefWidth="87.0" />
+        <Button layoutX="38.0" layoutY="165.0" mnemonicParsing="false" onAction="#evaluateQualityOA" text="Evaluate Quality" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="494.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.anika.treatmentrecordsController">
+    <children>
+        <Label layoutX="283.0" prefHeight="56.0" prefWidth="136.0" text="Water Treatment Records" />
+        <Label layoutX="48.0" layoutY="56.0" text="New Treatment Entry" />
+        <Label layoutX="48.0" layoutY="83.0" text="pond" />
+        <ComboBox fx:id="pondCB" layoutX="84.0" layoutY="79.0" prefHeight="25.0" prefWidth="118.0" />
+        <Label layoutX="230.0" layoutY="83.0" text="Treatment Type" />
+        <TextField fx:id="treatmentTypeTF" layoutX="326.0" layoutY="79.0" />
+        <Label layoutX="48.0" layoutY="127.0" text="Dosage" />
+        <TextField fx:id="dosageTF" layoutX="95.0" layoutY="123.0" prefHeight="25.0" prefWidth="100.0" />
+        <Label layoutX="230.0" layoutY="127.0" text="Date" />
+        <DatePicker fx:id="dateDP" layoutX="263.0" layoutY="123.0" prefHeight="25.0" prefWidth="100.0" />
+        <Label layoutX="387.0" layoutY="127.0" text="Responsible" />
+        <TextField fx:id="responsibleTF" layoutX="461.0" layoutY="123.0" prefHeight="25.0" prefWidth="100.0" />
+        <Button layoutX="363.0" layoutY="162.0" mnemonicParsing="false" onAction="#uploadFileOA" text="Upload File" />
+        <Button layoutX="470.0" layoutY="162.0" mnemonicParsing="false" onAction="#saveRecordOA" text="Save Record" />
+        <Button layoutX="629.0" layoutY="28.0" mnemonicParsing="false" onAction="#backOA" text="Back" />
+        <Label layoutX="39.0" layoutY="174.0" text="Previous Treatment Logs" />
+        <TableView fx:id="previousTreatmentLogTV" layoutX="6.0" layoutY="200.0" prefHeight="254.0" prefWidth="712.0">
+            <columns>
+                <TableColumn fx:id="pondCol" prefWidth="75.0" text="pond" />
+                <TableColumn fx:id="treatmentTypeCol" prefWidth="107.0" text="Treatment Type" />
+                <TableColumn fx:id="dosageCol" prefWidth="98.0" text="Dosage" />
+                <TableColumn fx:id="dateCol" prefWidth="84.0" text="Date" />
+                <TableColumn fx:id="timeCol" prefWidth="100.0" text="Time" />
+                <TableColumn fx:id="responsibleCol" prefWidth="127.0" text="Responsible" />
+                <TableColumn fx:id="notesCol" prefWidth="115.0" text="Notes" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
