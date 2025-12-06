@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fish_hatchery_final.Akkhorik.hatcheryoperatorcontroller">
+    <top>
+        <HBox style="-fx-background-color: #2c3e50; -fx-padding: 10 20;" alignment="CENTER_RIGHT" spacing="10">
+            <Label text="Hatchery Operator Dashboard" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox alignment="CENTER_RIGHT" spacing="5">
+                <Label text="Operator: " style="-fx-text-fill: white;"/>
+                <Label text="John Doe" style="-fx-text-fill: #3498db; -fx-font-weight: bold;"/>
+                <Button text="Logout" onAction="#handleLogout" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 5 15; -fx-background-radius: 3;">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/images/logout.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <!-- Goal 1: Record Daily Hatching Data -->
+                <Tab text="Record Hatching Data">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Record Daily Hatching Data" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <GridPane hgap="10" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                </columnConstraints>
+
+                                <Label text="Record ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="hatchRecordId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Tank ID" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                                <TextField fx:id="hatchTankId" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                                <Label text="Eggs Hatched" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="eggsHatched" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Hatch Rate (%)" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                                <TextField fx:id="hatchRate" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                                <Label text="Date" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <DatePicker fx:id="hatchDate" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Notes" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <TextArea fx:id="hatchNotes" prefRowCount="3" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                            </GridPane>
+
+                            <Button text="Record Hatching Data" onAction="#handleRecordHatching"
+                                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                            <TableView fx:id="hatchingTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="Record ID" prefWidth="100"/>
+                                    <TableColumn text="Tank ID" prefWidth="80"/>
+                                    <TableColumn text="Eggs Hatched" prefWidth="100"/>
+                                    <TableColumn text="Hatch Rate" prefWidth="80"/>
+                                    <TableColumn text="Date" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- Goal 2: Monitor Water Quality Parameters -->
+                <Tab text="Water Quality Monitoring">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Monitor Water Quality Parameters" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <GridPane hgap="10" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                </columnConstraints>
+
+                                <Label text="Tank ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="opWaterTank" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Temperature (°C)" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                                <TextField fx:id="opTemperature" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                                <Label text="pH Level" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="opPH" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Oxygen (mg/L)" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                                <TextField fx:id="opOxygen" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                                <Label text="Ammonia (mg/L)" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextField fx:id="opAmmonia" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Notes" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <TextArea fx:id="opWaterNotes" prefRowCount="3" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                            </GridPane>
+
+                            <Button text="Record Water Quality" onAction="#handleRecordWaterQuality"
+                                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                            <TableView fx:id="operatorWaterTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="Tank ID" prefWidth="80"/>
+                                    <TableColumn text="Temperature" prefWidth="100"/>
+                                    <TableColumn text="pH" prefWidth="80"/>
+                                    <TableColumn text="Oxygen" prefWidth="80"/>
+                                    <TableColumn text="Ammonia" prefWidth="80"/>
+                                    <TableColumn text="Date" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- Goal 3: Feed Larvae and Track Schedule -->
+                <Tab text="Feeding Schedule">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Feed Larvae and Track Feeding Schedule" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <GridPane hgap="10" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                </columnConstraints>
+
+                                <Label text="Tank ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="feedTankId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Feed Type" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                                <ComboBox fx:id="feedType" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                                <Label text="Amount (g)" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="feedAmount" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Feeding Time" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                                <TextField fx:id="feedingTime" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                                <Label text="Feeding Response" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="feedingResponse" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Notes" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <TextArea fx:id="feedingNotes" prefRowCount="3" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                            </GridPane>
+
+                            <Button text="Record Feeding" onAction="#handleRecordFeeding"
+                                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                            <TableView fx:id="feedingScheduleTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="Tank ID" prefWidth="80"/>
+                                    <TableColumn text="Feed Type" prefWidth="120"/>
+                                    <TableColumn text="Amount" prefWidth="80"/>
+                                    <TableColumn text="Time" prefWidth="100"/>
+                                    <TableColumn text="Response" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- Goal 4: Transfer Larvae -->
+                <Tab text="Larvae Transfer">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Transfer Larvae to Grow-out Tanks" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <GridPane hgap="10" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                </columnConstraints>
+
+                                <Label text="Source Tank" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="sourceTank" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Destination Tank" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                                <TextField fx:id="destinationTank" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                                <Label text="Larvae Count" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="larvaeCount" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Transfer Date" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                                <TextField fx:id="transferDate" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                                <Label text="Notes" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextArea fx:id="transferNotes" prefRowCount="3" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                            </GridPane>
+
+                            <Button text="Record Transfer" onAction="#handleRecordTransfer"
+                                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                            <TableView fx:id="transferTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="Source" prefWidth="100"/>
+                                    <TableColumn text="Destination" prefWidth="100"/>
+                                    <TableColumn text="Larvae Count" prefWidth="100"/>
+                                    <TableColumn text="Date" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- Goal 5: Generate Production Report -->
+                <Tab text="Production Reports">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Generate Hatchery Production Report" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <HBox spacing="15" alignment="CENTER_LEFT">
+                                <VBox spacing="5">
+                                    <Label text="Start Date"/>
+                                    <DatePicker fx:id="reportStartDate" prefWidth="150"/>
+                                </VBox>
+                                <VBox spacing="5">
+                                    <Label text="End Date"/>
+                                    <DatePicker fx:id="reportEndDate" prefWidth="150"/>
+                                </VBox>
+                                <Button fx:id="generateReportBtn" text="Generate Report" onAction="#handleGenerateProductionReport"
+                                        style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                            </HBox>
+
+                            <TextArea fx:id="productionSummary" prefRowCount="10" promptText="Production report will appear here..."/>
+
+                            <TableView fx:id="productionReportTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="Period" prefWidth="150"/>
+                                    <TableColumn text="Eggs Hatched" prefWidth="100"/>
+                                    <TableColumn text="Hatch Rate" prefWidth="80"/>
+                                    <TableColumn text="Mortality" prefWidth="80"/>
+                                    <TableColumn text="Feed Used" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- Goal 6: Update Broodstock Information -->
+                <Tab text="Broodstock Management">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Update Broodstock Information" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <GridPane hgap="10" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                </columnConstraints>
+
+                                <Label text="Broodstock ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="broodstockId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Species" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                                <TextField fx:id="broodstockSpecies" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                                <Label text="Health Status" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="healthStatus" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Age (Months)" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                                <TextField fx:id="ageMonths" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                                <Label text="Notes" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextArea fx:id="broodstockNotes" prefRowCount="3" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                            </GridPane>
+
+                            <Button text="Update Broodstock" onAction="#handleUpdateBroodstock"
+                                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                            <TableView fx:id="broodstockTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="ID" prefWidth="80"/>
+                                    <TableColumn text="Species" prefWidth="120"/>
+                                    <TableColumn text="Health" prefWidth="100"/>
+                                    <TableColumn text="Age" prefWidth="80"/>
+                                    <TableColumn text="Last Update" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- Goal 7: Report Mortality Rate -->
+                <Tab text="Mortality Reporting">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Report Mortality Rate" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <GridPane hgap="10" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                </columnConstraints>
+
+                                <Label text="Tank ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="mortalityTank" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Dead Count" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                                <TextField fx:id="deadCount" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                                <Label text="Cause" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="mortalityCause" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Date" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                                <DatePicker fx:id="mortalityDate" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                                <Label text="Notes" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextArea fx:id="mortalityNotes" prefRowCount="3" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                            </GridPane>
+
+                            <Button text="Report Mortality" onAction="#handleReportMortality"
+                                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                            <TableView fx:id="mortalityTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="Tank ID" prefWidth="80"/>
+                                    <TableColumn text="Dead Count" prefWidth="80"/>
+                                    <TableColumn text="Cause" prefWidth="120"/>
+                                    <TableColumn text="Date" prefWidth="100"/>
+                                    <TableColumn text="Reported By" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+
+                <!-- Goal 8: Request Equipment Maintenance -->
+                <Tab text="Maintenance Requests">
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15" style="-fx-padding: 20;">
+                            <Label text="Request Maintenance for Equipment" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1565c0;" />
+
+                            <GridPane hgap="10" vgap="10">
+                                <columnConstraints>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                    <ColumnConstraints prefWidth="150"/>
+                                    <ColumnConstraints prefWidth="200"/>
+                                </columnConstraints>
+
+                                <Label text="Equipment ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="equipmentId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Equipment Type" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                                <ComboBox fx:id="equipmentType" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                                <Label text="Urgency Level" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="urgencyLevel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Problem Description" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextArea fx:id="problemDescription" prefRowCount="4" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+                            </GridPane>
+
+                            <Button fx:id="submitRequestBtn" text="Submit Maintenance Request" onAction="#handleSubmitMaintenanceRequest"
+                                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                            <TableView fx:id="maintenanceTable" prefHeight="200">
+                                <columns>
+                                    <TableColumn text="Equipment ID" prefWidth="100"/>
+                                    <TableColumn text="Type" prefWidth="120"/>
+                                    <TableColumn text="Problem" prefWidth="200"/>
+                                    <TableColumn text="Urgency" prefWidth="80"/>
+                                    <TableColumn text="Status" prefWidth="80"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
